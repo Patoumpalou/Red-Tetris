@@ -1,0 +1,20 @@
+:root {
+  --autocomplete-color: #000;
+  --autocomplete-background-color: #fff;
+  --autocomplete-primary-color: #000;
+  --autocomplete-primary-background-color: #fff;
+}
+body {
+  padding: 0px !important;
+}
+
+/* ::-webkit-scrollbar { 
+  display: none; 
+}
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+} */
+html {
+    scroll-behavior: smooth;
+    overflow: auto;
+  }
