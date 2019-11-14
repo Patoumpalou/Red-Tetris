@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'RainyDays';
+    src: url('/fonts/RainyDays.ttf') format('truetype');
+}
+
+.title{
+    font-family: 'RainyDays';
+    font-size: 64px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* color: #aa3035; */
+}
+.container{
+    display: flex;
+    padding-right:5%;
+    padding-left: 5%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* width: 100vw; */
+    /* width: 100%; */
+    height: 100vh;
+    background-image: url('/img/tetris2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#left-container{
+    width: 69%;
+    margin-right: 1%;
+}
+#next-tetris-box{
+    margin-bottom: 35px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    width: 100%;
+    min-height: 180px;
+    box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.65);
+}
+#tetris-game-box{
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.65);
+}
+
+#sidebar{
+    box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.65);
+    margin-left:2%;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    width: 28%;
+}
