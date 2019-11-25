@@ -7,7 +7,11 @@ const Piece = ({shape, state, position}) => {
 	}
 	return (
 		<div className="piece-container">
-			<img className={'piece_shape_' + shape} src={"/img/pieces/piece_"+ shape + '.png'}/>
+			<img 
+				alt="a cute tetris"
+				className={'piece_shape_' + shape} 
+				src={"/img/pieces/piece_"+ shape + '.png'}
+			/>
 		</div>
 	)
 	// <p> 

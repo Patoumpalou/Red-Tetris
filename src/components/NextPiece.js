@@ -5,21 +5,21 @@ import  Piece from "./Piece"
 
 const NextPiece = (props) => {
 
-// console.log(props);
+// console.log(props.waitingPieces);
 if(props.waitingPieces.length === 0){
-    props.dispatch(getRandomNumber(), 'waiting', '1')
-    props.dispatch(getRandomNumber(), 'waiting', '2')
-    props.dispatch(getRandomNumber(), 'waiting', '3')
-
+    let x = getRandomNumber()
+    props.addPiece(x, 'waiting')
+    props.addPiece(getRandomNumber(), 'waiting')
+    props.addPiece(getRandomNumber(), 'waiting')
+    props.initGrid();
 }
 // console.log(props.time)
 // console.log(props.currentPiece)
 let tmp = props.waitingPieces[0]
 if(props.time >= 3 &&  props.currentPiece.length === 0){
-    console.log('cc')
-    props.sendPieceToGame(tmp.id, tmp.shape, 'current piece', 'whatever');
-    props.dispatch(getRandomNumber(), 'waiting', '3')
-
+    props.sendPieceToGame(tmp.id, tmp.shape, 'current piece', tmp.piece_grid);
+    props.addPiece(getRandomNumber(), 'waiting')
+    props.updateGrid(4, 0, tmp.piece_grid)
 }
 
 return (

@@ -11,3 +11,6 @@ export const UPDATE_TIME = "UPDATE_TIME"
 
 export const SEND_PIECE_TO_GAME = "SEND_PIECE_TO_GAME"
 export const INCREMENT_Y = "INCREMENT_Y"
+
+export const INIT_GRID = "INIT_GRID"
+export const UPDATE_GRID = "UPDATE_GRID"

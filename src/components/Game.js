@@ -5,11 +5,12 @@ import  Piece from "./Piece"
 import currentPiece from '../reducers/currentPiece'
 
 const Game = (props) => {
-		// console.log(props.currentPiece.y)
+		console.log(props.grid.array)
+		
+		// console.log(props.currentPiece)
 		let currentPiece = props.currentPiece
-		if(currentPiece.y >= 19){
-			currentPiece.y = 19
-		}
+		// console.log(props.grid.array)
+
 		let ml = "calc("+currentPiece.x+" * var(--square-dim))"
 		let mt = "calc("+currentPiece.y+" * var(--square-dim))"
 		return (
@@ -23,13 +24,13 @@ const Game = (props) => {
 }
 
 Game.propTypes = {
-	inputs: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			input: PropTypes.string.isRequired,
-			player: PropTypes.string.isRequired,
-		}).isRequired
-	).isRequired
+	// inputs: PropTypes.arrayOf(
+	// 	PropTypes.shape({
+	// 		id: PropTypes.number.isRequired,
+	// 		input: PropTypes.string.isRequired,
+	// 		player: PropTypes.string.isRequired,
+	// 	}).isRequired
+	// ).isRequired
 }
 
 export default Game
