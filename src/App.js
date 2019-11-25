@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import './App.css';
-import './Tools.css';
-import  NextTetris  from "./containers/NextTetris";
-import  TetrisGame  from "./containers/TetrisGame";
+// import './App.css';
+// import './Tools.css';
+import './css';
+import  NextTetris  from "./containers/NextPiece";
+import  { AddInput }  from "./containers/AddInput";
+import  { Game }  from "./containers/Game";
 import  Sidebar  from "./containers/Sidebar";
 
-function App() {
-  return (
-    <div className="App">
-        <div className=" flex-row-center max-width">
-          <h1 className="title">Red Tetris</h1>
-        </div>
-        <div className="container">
-          <div className="flex-column-center" id="left-container">
-            <NextTetris />
-            <TetrisGame />
+class App extends Component {
+  render() {
+    return (
+      <div>
+          <div className=" flex-row-center max-width">
+            <h1 className="title">Red Tetris</h1>
           </div>
-          <Sidebar />
-        </div>
-    </div>
-  );
+          <AddInput />
+        
+      </div>
+    );
+  }
+ 
 }
 
 export default App;

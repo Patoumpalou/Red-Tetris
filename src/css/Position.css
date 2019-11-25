@@ -1,0 +1,17 @@
+#tetris-game-box div{
+    /* position: absolute; */
+}
+
+.curr_piece_y_20{
+    /* margin-bottom: calc(20 * var(--square-dim)); */
+}
+
+
+
+
+
+
+
+.curr_piece_x_5{
+    /* margin-left: calc(5* var(--square-dim)) */
+}

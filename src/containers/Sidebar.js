@@ -1,14 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import SidebarComponent from '../components/Sidebar'
 
-const Sidebar = (props) => {
-    let input
-
-    return (
-        <div className="flex-column-center" id="sidebar">
-
-        </div> 
-    )
-}
-
-export default Sidebar
+export const Sidebar = connect(state => ({
+	// users: state.users
+	time: state.time
+}), {})(SidebarComponent)
