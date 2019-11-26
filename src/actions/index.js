@@ -1,9 +1,24 @@
 import * as types from '../constants/ActionTypes'
+import { get_piece_grid } from '../function'
 
 let nextInputId = 0
 let nextPlayerId = 0
 let nextPieceId = 0 
 
+// related to grid reducer
+export const initGrid = () => ({
+    type: types.INIT_GRID
+})
+// related to grid reducer
+export const updateGrid = (x, y, piece_grid) => ({
+    type: types.UPDATE_GRID,
+    x,
+    y,
+    piece_grid
+
+})
+
+// related to inputs reducer
 export const addInput = (input, player) => ({
     type: types.ADD_INPUT, 
     id: nextInputId++,
@@ -11,26 +26,7 @@ export const addInput = (input, player) => ({
     player
 }) 
 
-export const addPiece = (shape, state, position) => ({
-    type: types.ADD_PIECE,
-    id: nextPieceId++,
-    shape,
-    state,
-    position
-})
-
-export const sendPieceToGame = (id, shape, state, position) => ({
-    type: types.SEND_PIECE_TO_GAME,
-    id, 
-    shape,
-    state,
-    position
-})
-
-export const incrementY = () => ({
-    type: types.INCREMENT_Y
-})
-
+// related to inputs reducer
 export const InputReceived = (input, player) => ({
     type: types.INPUT_RECEIVED,
     id: nextInputId++,
@@ -38,19 +34,50 @@ export const InputReceived = (input, player) => ({
     player
 })
 
-export const PieceReceived = (shape, state, position) => ({
-    type: types.PIECE_RECEIVED,
+// related to nextPiece reducer
+export const addPiece = (shape, state) => ({
+    type: types.ADD_PIECE,
     id: nextPieceId++,
+    piece_grid: get_piece_grid(shape, nextPieceId),
     shape,
-    state,
-    position
+    state
 })
 
+// related to nextPIece reducer
+export const PieceReceived = (shape, state, piece_grid) => ({
+    type: types.PIECE_RECEIVED,
+    id: nextPieceId++,
+    piece_grid: piece_grid,
+    shape,
+    state,
+    
+})
+
+// related to nextPiece and currentPiece reducer
+export const sendPieceToGame = (id, shape, state, piece_grid ) => ({
+    type: types.SEND_PIECE_TO_GAME,
+    id, 
+    shape,
+    state,
+    piece_grid
+})
+
+// related to currentPiece reducer
+export const incrementY = () => ({
+    type: types.INCREMENT_Y
+})
+
+// related to time reducer
 export const updateTime = value => ({
     type: types.UPDATE_TIME,
     value
 })
 
+
+
+
+
+// unused yet 
 export const addPlayer = name => ({
     type: types.ADD_PLAYER,
     id: nextPlayerId++,

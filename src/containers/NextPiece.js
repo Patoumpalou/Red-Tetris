@@ -1,14 +1,21 @@
 import { connect } from 'react-redux'
 import NextPieceComponent from '../components/NextPiece' 
-import { addPiece, sendPieceToGame } from '../actions'
+import { addPiece, sendPieceToGame, initGrid, updateGrid } from '../actions'
 import currentPiece from '../reducers/currentPiece'
 
+
 const mapDispatchToProps = dispatch => ({
-    dispatch: (shape, state, position) => {
-      dispatch(addPiece(shape, state, position))
+    addPiece: (shape, state) => {
+      dispatch(addPiece(shape, state))
     },
     sendPieceToGame: (id, shape, state, position) => {
       dispatch(sendPieceToGame(id, shape, state, position))
+    },
+    initGrid: () => {
+      dispatch(initGrid())
+    },
+    updateGrid: (x, y, piece_grid) => {
+      dispatch(updateGrid(x, y, piece_grid))
     }
   })
   
