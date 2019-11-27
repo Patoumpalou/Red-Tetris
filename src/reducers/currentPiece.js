@@ -25,7 +25,8 @@ const currentPiece = (state = [], action) => {
                     width: action.piece_grid[0].length,
                     id: action.id,
                     x: 4,
-                    y: 0 
+                    y: 0,
+                    rotation: 0,
                 }
             )
         case types.ARROW_LEFT:
@@ -42,11 +43,11 @@ const currentPiece = (state = [], action) => {
             return({
                 ...state,
                 y: state.y + 1
-                
             })
         case types.ARROW_UP:
             return({
-                ...state
+                ...state,
+                rotation: state.rotation + 90
             })
         case types.SPACE:
             return({

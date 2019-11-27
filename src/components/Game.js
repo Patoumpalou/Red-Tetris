@@ -7,16 +7,19 @@ import currentPiece from '../reducers/currentPiece'
 const Game = (props) => {
 		// console.log(props.grid.array)
 		
-		console.log(props.currentPiece.x)
+		// console.log(props.currentPiece.x)
 		let currentPiece = props.currentPiece
 		// console.log(props.grid.array)
 
 		let ml = "calc("+currentPiece.x+" * var(--square-dim))"
 		let mt = "calc("+currentPiece.y+" * var(--square-dim))"
+		let rotation = "rotate("+currentPiece.rotation+"deg)"
 		return (
 			<section id="tetris-game-box">
-				<div style={{marginLeft: ml, marginTop: mt}}
-				className={'curr_piece_y_'+ currentPiece.y + ' curr_piece_x_' + currentPiece.x}>
+				<div 
+					style={{marginLeft: ml, marginTop: mt}}
+					className={'curr_piece_y_'+ currentPiece.y + ' curr_piece_x_' + currentPiece.x}
+				>
 					<Piece key={currentPiece.id} {...currentPiece}/>
 				</div>
 			</section>
