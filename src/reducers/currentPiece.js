@@ -4,7 +4,7 @@ import { getRotatedPieceMap} from '../function'
 const currentPiece = (state = [], action) => {
     switch (action.type) {
         case types.INCREMENT_Y:
-                console.log(state.shape)
+                // console.log(state.shape)
                 // console.log(state.y)
             if(state.y < (20 - (state.height))){
                
