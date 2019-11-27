@@ -4,6 +4,7 @@ const inputs = (state = [], action) => {
     switch (action.type) {
         case types.ADD_INPUT: 
         case types.INPUT_RECEIVED: 
+        console.log(state)
             return state.concat([
                 {
                     input: action.input,

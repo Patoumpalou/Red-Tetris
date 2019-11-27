@@ -1,0 +1,2 @@
+supprimer le reducer inputs ?
+supprimer le composant message ?

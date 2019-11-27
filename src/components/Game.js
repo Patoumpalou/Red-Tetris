@@ -5,9 +5,9 @@ import  Piece from "./Piece"
 import currentPiece from '../reducers/currentPiece'
 
 const Game = (props) => {
-		console.log(props.grid.array)
+		// console.log(props.grid.array)
 		
-		// console.log(props.currentPiece)
+		console.log(props.currentPiece.x)
 		let currentPiece = props.currentPiece
 		// console.log(props.grid.array)
 

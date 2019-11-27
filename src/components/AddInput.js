@@ -19,26 +19,27 @@ const addInput = (props) => {
 	// }
 	document.addEventListener('keydown', (e) => {
 		// console.log(e.code)
-		console.log(props.waitingPieces)
+		// console.log(props.waitingPieces)
 		if(e.code === 'ArrowUp'){
 			// rotation
 			// console.log(' asdasd')
-			props.addInput('rotate', 'Me')
+			props.arrowUp()
 			
 		}
 		if(e.code === 'ArrowDown'){
 			// chute 
-			props.addInput('down', 'Me')
+			props.arrowDown()
 		}
 		if(e.code === 'ArrowLeft'){
 			// deplace a gauche
-			props.addInput('move left', 'Me')
+			props.arrowLeft()
 		}
 		if(e.code === 'ArrowRight'){
 			// deplace a droite
-			props.addInput('move right', 'Me')
+			props.arrowRight()
 		}
 		if(e.code === 'Space'){
+			props.space()
 			// deplacement vertical 
 		}
 	})
@@ -46,7 +47,7 @@ const addInput = (props) => {
         <section id="cc">
 			<div className="container">
 				<section className="flex-column-center" id="left-container">
-					<UpdateGrid currentPiece={props.currentPiece}/>
+					<UpdateGrid />
 					<NextPiece />
 					<Game />
 				</section>
@@ -57,6 +58,6 @@ const addInput = (props) => {
 }
 
 addInput.propTypes = {
-	addInput: PropTypes.func.isRequired,
+	// addInput: PropTypes.func.isRequired,
 }
 export default addInput

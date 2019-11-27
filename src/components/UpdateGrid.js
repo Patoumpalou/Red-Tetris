@@ -6,7 +6,7 @@ import  { Sidebar }  from "../containers/Sidebar";
 
 const UpdateGrid = (props) => {
 	
-	console.log(props.currentPiece.y)
+	// console.log(props.currentPiece.y)
 	if (props.currentPiece.shape !== undefined){
 		props.updateGrid(
 			props.currentPiece.x,

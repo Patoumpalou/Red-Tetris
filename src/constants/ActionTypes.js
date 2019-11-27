@@ -14,3 +14,9 @@ export const INCREMENT_Y = "INCREMENT_Y"
 
 export const INIT_GRID = "INIT_GRID"
 export const UPDATE_GRID = "UPDATE_GRID"
+
+export const ARROW_LEFT = "ARROW_LEFT"
+export const ARROW_RIGHT = "ARROW_RIGHT"
+export const ARROW_UP = "ARROW_UP"
+export const ARROW_DOWN = "ARROW_DOWN"
+export const SPACE = "SPACE"

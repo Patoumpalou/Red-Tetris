@@ -31,8 +31,10 @@ const grid = (state = [], action) => {
                 }
             )
         case types.UPDATE_GRID:
-            let grid = state.array
-            // console.log(grid)
+            // let grid = state.array
+            state.array[0][0] = action.y
+            // console.log(state.array)
+            // console.log('y= '+action.y)
             let piece_grid = action.piece_grid
             let piece_height = piece_grid.length
             let piece_width = piece_grid[0].length
@@ -49,26 +51,27 @@ const grid = (state = [], action) => {
             // console.log(piece_coords)
             for(var y2 = 0; y2 < 19; y2++){
                 for(var x2 = 0; x2 < 9; x2++){
-                    if (grid[y2][x2] === piece_id){
-                        grid[y2][x2] = 0
+                    if (state.array[y2][x2] === piece_id){
+                        state.array[y2][x2] = 0
                     }
                 }
             }
             
             // console.log(piece_coords)
+
             piece_coords.forEach(coords => {
                 
                 let tmp_y = coords[0] + action.y
                 let tmp_x = coords[1] + action.x
-                console.log(tmp_y + ' ; ' + tmp_x)
-                if(grid[tmp_y] !== undefined && grid[tmp_y][tmp_x] !== undefined){
-                    grid[tmp_y][tmp_x] = piece_id
+                if(state.array[tmp_y] !== undefined && state.array[tmp_y][tmp_x] !== undefined){
+                    // console.log('qweqweqweqwe' + tmp_y + ' ; ' + tmp_x)
+                    state.array[tmp_y][tmp_x] = piece_id
                 }
             })
-            // console.log(action.y)
+         
             // console.log(grid)
             return ({
-                array:grid,
+                array: state.array,
                 piece_id: piece_id,
                 piece_y: action.y,
                 piece_x: action.x

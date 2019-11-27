@@ -18,7 +18,25 @@ export const updateGrid = (x, y, piece_grid) => ({
 
 })
 
-// related to inputs reducer
+// related to currentPiece reducer
+export const arrowLeft = () => ({
+    type: types.ARROW_LEFT
+})
+export const arrowRight = () => ({
+    type: types.ARROW_RIGHT
+})
+export const arrowDown = () => ({
+    type: types.ARROW_DOWN
+})
+export const arrowUp = () => ({
+    type: types.ARROW_UP
+})
+export const space = () => ({
+    type: types.SPACE
+})
+// ////////////////////////////////
+
+// related to inputs reducer DELETE ?
 export const addInput = (input, player) => ({
     type: types.ADD_INPUT, 
     id: nextInputId++,

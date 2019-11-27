@@ -9,6 +9,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export const UpdateGrid = connect(
-  () => ({}),
+  state => ({
+    currentPiece: state.currentPiece,
+
+}),
   mapDispatchToProps
   )(UpdateGridComponent)

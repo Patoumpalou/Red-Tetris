@@ -9,10 +9,7 @@ const currentPiece = (state = [], action) => {
                 return(
                     {
                         ...state,
-                        old_y: state.y,
-                        y: state.y + 1,
-                        
-                        
+                        y: state.y + 1
                     }
                 )
             }
@@ -31,6 +28,30 @@ const currentPiece = (state = [], action) => {
                     y: 0 
                 }
             )
+        case types.ARROW_LEFT:
+            return({
+                ...state,
+                x: state.x - 1
+            })
+        case types.ARROW_RIGHT:
+            return({
+                ...state,
+                x: state.x + 1
+            })
+        case types.ARROW_DOWN:
+            return({
+                ...state,
+                y: state.y + 1
+                
+            })
+        case types.ARROW_UP:
+            return({
+                ...state
+            })
+        case types.SPACE:
+            return({
+                ...state
+            })
         default:
             return state
     }

@@ -1,21 +1,30 @@
 import { connect } from 'react-redux'
 import AddInputComponent from '../components/AddInput'
-import { addInput, updateTime, updateGrid, incrementY} from '../actions'
+import { arrowUp, arrowDown, arrowLeft, arrowRight, space} from '../actions'
 
 const mapDispatchToProps = dispatch => ({
-  addInput: (input, player) => {
-    dispatch(addInput(input, player))
+  arrowLeft: () => {
+    dispatch(arrowLeft())
   },
-  updateGrid: (x, y, piece_grid) => {
-    dispatch(updateGrid(x, y, piece_grid))
-  }
+  arrowRight: () => {
+    dispatch(arrowRight())
+  },
+  arrowDown: () => {
+    dispatch(arrowDown())
+  },
+  arrowUp: () => {
+    dispatch(arrowUp())
+  },
+  space: () => {
+    dispatch(space())
+  },
 })
 
 export const AddInput = connect(
-  state => ({
-    waitingPieces: state.waitingPieces,
-    time: state.time,
-    currentPiece: state.currentPiece,
+  () => ({
+    // waitingPieces: state.waitingPieces,
+    // time: state.time,
+    // currentPiece: state.currentPiece,
 
 }),
   mapDispatchToProps

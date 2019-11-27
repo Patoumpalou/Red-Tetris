@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     return (
       <div>
-          <div className=" flex-row-center max-width">
+          {/* <div className=" flex-row-center max-width">
             <h1 className="title">Red Tetris</h1>
-          </div>
+          </div> */}
           <Chrono />
           <AddInput />
         
