@@ -4,12 +4,14 @@ import PropTypes from 'prop-types'
 const Piece = ({shape, rotation}) => {
 	// let rotation = ""
 	
-	// console.log(rotation)
+	// console.log("shape = "+shape)
+	// console.log(shape)
 	if (shape === undefined){
+		console.log('caca')
 		return null
 	}
 	if(rotation !== undefined){
-		console.log(rotation)
+		// console.log(rotation)
 		 rotation = "rotate("+rotation+"deg)"
 	}
 	return (

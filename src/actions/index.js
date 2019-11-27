@@ -3,7 +3,7 @@ import { get_piece_grid } from '../function'
 
 let nextInputId = 0
 let nextPlayerId = 0
-let nextPieceId = 0 
+let nextPieceId = 1 
 
 // related to grid reducer
 export const initGrid = () => ({

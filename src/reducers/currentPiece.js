@@ -1,8 +1,10 @@
 import * as types from '../constants/ActionTypes'
+import { getRotatedPieceMap} from '../function'
 
 const currentPiece = (state = [], action) => {
     switch (action.type) {
         case types.INCREMENT_Y:
+                console.log(state.shape)
                 // console.log(state.y)
             if(state.y < (20 - (state.height))){
                
@@ -30,23 +32,52 @@ const currentPiece = (state = [], action) => {
                 }
             )
         case types.ARROW_LEFT:
+            if(state.shape === undefined){
+                return {...state}
+            }
+            let x2 
+            if ((state.x - 1) >= 0 ){
+                x2 = state.x - 1
+            }
+            else{
+                x2 = state.x
+            }
             return({
                 ...state,
-                x: state.x - 1
+                x: x2
             })
         case types.ARROW_RIGHT:
+            if(state.shape === undefined){
+                return {...state}
+            }
+            let x 
+            if ((state.x + 1) <= (10 - state.width)){
+                x = state.x + 1
+            }
+            else{
+                x = state.x
+            }
             return({
                 ...state,
-                x: state.x + 1
+                x: x
             })
         case types.ARROW_DOWN:
+            if(state.shape === undefined){
+                return {...state}
+            }
             return({
                 ...state,
                 y: state.y + 1
             })
         case types.ARROW_UP:
+            if(state.shape === undefined){
+                return {...state}
+            }
             return({
                 ...state,
+                piece_grid: getRotatedPieceMap(state.piece_grid),
+                width: state.height,
+                height: state.width,
                 rotation: state.rotation + 90
             })
         case types.SPACE:

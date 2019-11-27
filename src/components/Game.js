@@ -7,7 +7,7 @@ import currentPiece from '../reducers/currentPiece'
 const Game = (props) => {
 		// console.log(props.grid.array)
 		
-		// console.log(props.currentPiece.x)
+		// console.log(props.currentPiece.shape)
 		let currentPiece = props.currentPiece
 		// console.log(props.grid.array)
 
@@ -20,7 +20,9 @@ const Game = (props) => {
 					style={{marginLeft: ml, marginTop: mt}}
 					className={'curr_piece_y_'+ currentPiece.y + ' curr_piece_x_' + currentPiece.x}
 				>
-					<Piece key={currentPiece.id} {...currentPiece}/>
+					<Piece key={currentPiece.id}
+					shape={currentPiece.id}
+					{...currentPiece}/>
 				</div>
 			</section>
 		)
