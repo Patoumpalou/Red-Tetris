@@ -10,7 +10,9 @@ const waitingPieces = (state = [], action) => {
                     shape: action.shape,
                     state: action.state,
                     id: action.id,
-                    piece_grid: action.piece_grid
+                    piece_grid: action.piece_grid,
+                    height: action.piece_grid.length,
+                    width: action.piece_grid[0].length,
                 }
             ])
         case types.SEND_PIECE_TO_GAME:

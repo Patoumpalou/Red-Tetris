@@ -20,3 +20,5 @@ export const ARROW_RIGHT = "ARROW_RIGHT"
 export const ARROW_UP = "ARROW_UP"
 export const ARROW_DOWN = "ARROW_DOWN"
 export const SPACE = "SPACE"
+
+export const PIECE_IS_PLAYED = "PIECE_IS_PLAYED"

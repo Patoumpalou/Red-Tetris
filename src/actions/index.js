@@ -5,6 +5,14 @@ let nextInputId = 0
 let nextPlayerId = 0
 let nextPieceId = 1 
 
+//  related to playedpiece reducer and currentPiece reducer
+export const pieceIsPlayed = (piece_grid, y, x, shape) => ({
+    type: types.PIECE_IS_PLAYED,
+    piece_grid,
+    y,
+    x,
+    shape
+})
 // related to grid reducer
 export const initGrid = () => ({
     type: types.INIT_GRID

@@ -7,7 +7,8 @@ const NextPiece = (props) => {
 
 // console.log(props.waitingPieces);
 if(props.waitingPieces.length === 0){
-    let x = getRandomNumber()
+    let x = '7'
+    // let x = getRandomNumber()
     props.addPiece(x, 'waiting')
     props.addPiece(getRandomNumber(), 'waiting')
     props.addPiece(getRandomNumber(), 'waiting')

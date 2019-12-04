@@ -6,7 +6,7 @@ const currentPiece = (state = [], action) => {
         case types.INCREMENT_Y:
                 // console.log(state.shape)
                 // console.log(state.y)
-            if(state.y < (20 - (state.height))){
+            if(state.y < (20 - state.height)){
                
                 return(
                     {
@@ -15,6 +15,7 @@ const currentPiece = (state = [], action) => {
                     }
                 )
             }
+            console.log('asd')
             return state
             
         case types.SEND_PIECE_TO_GAME: 
@@ -31,6 +32,8 @@ const currentPiece = (state = [], action) => {
                     rotation: 0,
                 }
             )
+        case types.PIECE_IS_PLAYED:
+            return([])
         case types.ARROW_LEFT:
             if(state.shape === undefined){
                 return {...state}

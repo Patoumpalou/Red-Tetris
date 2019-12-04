@@ -8,10 +8,7 @@ const Chrono = (props) => {
 	let i = 0;
 
 	setInterval(() => {
-
-		// console.log(i)
 		if(i >= 4 ){
-			// console.log('incrementy')
 			props.incrementY()
 		}
 		props.updateTime(i)

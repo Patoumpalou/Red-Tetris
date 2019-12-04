@@ -2,28 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Message from './Message'
 import  Piece from "./Piece"
+import  Square from "./Square"
 import currentPiece from '../reducers/currentPiece'
+import { directive } from '@babel/types'
 
 const Game = (props) => {
 		// console.log(props.grid.array)
 		
 		// console.log(props.currentPiece.shape)
 		let currentPiece = props.currentPiece
+		let grid = props.grid.array
 		// console.log(props.grid.array)
 
-		let ml = "calc("+currentPiece.x+" * var(--square-dim))"
-		let mt = "calc("+currentPiece.y+" * var(--square-dim))"
-		let rotation = "rotate("+currentPiece.rotation+"deg)"
+		let y = 0;
+		let x = 0;
 		return (
 			<section id="tetris-game-box">
-				<div 
-					style={{marginLeft: ml, marginTop: mt}}
-					className={'curr_piece_y_'+ currentPiece.y + ' curr_piece_x_' + currentPiece.x}
-				>
-					<Piece key={currentPiece.id}
+					{grid.map(element => (
+							
+							// console.log(element)
+							
+						element.map(e => (
+							<Square key={x++} shape={e.toString()}/>
+						))
+						
+					))}
+					{/* <Piece key={currentPiece.id}
 					shape={currentPiece.id}
-					{...currentPiece}/>
-				</div>
+					{...currentPiece}/> */}
 			</section>
 		)
 }

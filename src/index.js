@@ -9,10 +9,11 @@ import logger from 'redux-logger'
 
 import test from './reducers';
 
-const store = createStore(
-    test,
-    applyMiddleware(logger)
-);
+// const store = createStore(
+//     test,
+//     applyMiddleware(logger)
+// );
+const store = createStore(test);
 
 ReactDOM.render(
     <Provider store={store}>

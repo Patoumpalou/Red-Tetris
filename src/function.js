@@ -29,43 +29,44 @@ function getRotatedPieceMap(pieceMap){
 
 function get_piece_grid(shape, id){
     // console.log(' heeeeeeerrreeeeee')
-    if (shape === '0'){
+    id = shape
+    if (shape === '1'){
         return [
             [id, 0,  0],
             [id, id, id]
         ]
     }
-    if (shape === '1'){
+    if (shape === '2'){
         return [
             [0,  0,  id],
             [id, id, id]
         ]
     }
-    if (shape === '2'){
+    if (shape === '3'){
         return [
             [id, id],
             [id, id]
         ]
     }
-    if (shape === '3'){
+    if (shape === '4'){
         return [
             [id, id, 0],
             [0,  id, id]
         ]
     }
-    if (shape === '4'){
+    if (shape === '5'){
         return [
             [0,  id, 0],
             [id, id, id]
         ]
     }
-    if (shape === '5'){
+    if (shape === '6'){
         return [
             [0,  id, id],
             [id, id, 0]
         ]
     }
-    if (shape === '6'){
+    if (shape === '7'){
         return [
             [id, id, id, id]
         ]
@@ -73,7 +74,7 @@ function get_piece_grid(shape, id){
 }
 
 function getRandomNumber(){
-    return Math.round(Math.random() * 6).toString();
+    return Math.round((Math.random() * 6) + 1).toString();
 }
 
 export { getRandomNumber, get_piece_grid, getRotatedPieceMap}
