@@ -17,6 +17,7 @@ const addInput = (props) => {
 		
 	
 	// }
+	props.gameStart()
 	document.addEventListener('keydown', (e) => {
 		// console.log(e.code)
 		// console.log(props.waitingPieces)

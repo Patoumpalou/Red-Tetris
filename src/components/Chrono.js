@@ -8,11 +8,14 @@ const Chrono = (props) => {
 	let i = 0;
 
 	setInterval(() => {
-		if(i >= 4 ){
-			props.incrementY()
-		}
-		props.updateTime(i)
-		i++;
+		// if(props.time.gameStatus === 'on'){
+			if(i >= 4 ){
+				props.incrementY()
+			}
+			props.updateTime(i)
+			i++;
+		// }
+	
 	}, 1000);
     return (
         <section id="chrono">

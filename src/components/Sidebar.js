@@ -6,7 +6,7 @@ const Sidebar = (props) => {
 
     return (
         <div className="flex-column-center" id="sidebar">
-            <h1>{props.time}</h1>
+            <h1>{props.time.value}</h1>
         </div> 
     )
 }

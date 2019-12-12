@@ -98,6 +98,12 @@ export const updateTime = value => ({
     type: types.UPDATE_TIME,
     value
 })
+export const gameOver = () => ({
+    type: types.GAME_OVER
+})
+export const gameStart = () => ({
+    type: types.GAME_START
+})
 
 
 

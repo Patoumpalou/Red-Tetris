@@ -3,9 +3,10 @@ import { getRotatedPieceMap} from '../function'
 
 const currentPiece = (state = [], action) => {
     switch (action.type) {
+   
         case types.INCREMENT_Y:
-                // console.log(state.shape)
-                // console.log(state.y)
+            // console.log(state.shape)
+            // console.log(state.y)
             if(state.y < (20 - state.height)){
                
                 return(
@@ -15,12 +16,13 @@ const currentPiece = (state = [], action) => {
                     }
                 )
             }
-            console.log('asd')
+            console.log('it didnt increment y')
             return state
             
         case types.SEND_PIECE_TO_GAME: 
             return (
                 {
+                    ...state,
                     shape: action.shape,
                     state: action.state,
                     piece_grid: action.piece_grid,

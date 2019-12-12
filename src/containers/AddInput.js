@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import AddInputComponent from '../components/AddInput'
-import { arrowUp, arrowDown, arrowLeft, arrowRight, space} from '../actions'
+import { gameStart, arrowUp, arrowDown, arrowLeft, arrowRight, space} from '../actions'
 
 const mapDispatchToProps = dispatch => ({
   arrowLeft: () => {
@@ -18,6 +18,9 @@ const mapDispatchToProps = dispatch => ({
   space: () => {
     dispatch(space())
   },
+  gameStart: () => {
+    dispatch(gameStart())
+  }
 })
 
 export const AddInput = connect(

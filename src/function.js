@@ -1,3 +1,25 @@
+function SearchAnddestroyLines(grid){
+    for(let y = 0; y < grid.length; y++){
+        let isFullLine = true
+        for (let x = 0; x < grid[0].length; x++){
+            if (isFullLine === true && grid[y][x] === 0){
+                isFullLine = false;
+            }
+        }
+        if (isFullLine === true){
+            // decalle tt d'un cran
+            
+            for(let z = y; z > 0; z--){
+                grid[z] = grid[z - 1]
+            }
+            grid[0] =  [0,0,0,0,0,0,0,0,0,0]
+            //
+            y = 0
+        }
+    }
+    return grid;
+}
+
 function getRotatedPieceMap(pieceMap){
     // if (pieceMap === undefined)
         // return pieceMap
@@ -26,7 +48,49 @@ function getRotatedPieceMap(pieceMap){
     console.log(res)
     return res
 }
-
+function checkForContact(grid, currentPiece){
+    // tu prend les coords des cases remplies de piece_grid
+    // console.log(grid.array)
+    let str = 'ok'
+    let square_coords = []
+    for(var y = 0; y < currentPiece.piece_grid.length; y++){
+        for(var x = 0; x < currentPiece.piece_grid[0].length; x++){
+            if (currentPiece.piece_grid[y][x] !== 0){
+                square_coords.push([y, x])
+            }
+        }
+    }
+    square_coords.forEach(coords => {
+                
+        let tmp_y = coords[0] + currentPiece.y
+        let tmp_x = coords[1] + currentPiece.x
+        let isInOldPos
+        if(grid.array[tmp_y] !== undefined && grid.array[tmp_y][tmp_x] !== undefined){
+            if (grid.array[tmp_y][tmp_x] !== 0 ){
+                isInOldPos = false
+                grid.old_position.forEach(old_coords =>{
+                    // si cette pos est presente dans old position, ne la prend pas
+                    // console.log('old coords:')
+                    // console.log(old_coords)
+                   
+                    if (tmp_y == old_coords[0] && tmp_x == old_coords[1]){
+                        isInOldPos = true
+                    }
+                   
+                })
+                if (isInOldPos == false){
+                       
+                    // console.log('target coords')
+                    // console.log(tmp_y, tmp_x)
+                    
+                    str = 'stop'
+                }
+            }
+           
+        }
+    })
+    return str; 
+}
 function get_piece_grid(shape, id){
     // console.log(' heeeeeeerrreeeeee')
     id = shape
@@ -77,4 +141,10 @@ function getRandomNumber(){
     return Math.round((Math.random() * 6) + 1).toString();
 }
 
-export { getRandomNumber, get_piece_grid, getRotatedPieceMap}
+export {
+    SearchAnddestroyLines,
+    checkForContact,
+    getRandomNumber,
+    get_piece_grid,
+    getRotatedPieceMap
+}
