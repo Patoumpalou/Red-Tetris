@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 // import './Tools.css';
 import './css';
 
-import  { AddInput }  from "./containers/AddInput";
-import { Chrono } from "./containers/Chrono";
+import { HomePage } from "./containers/HomePage";
 
 class App extends Component {
   render() {
@@ -13,13 +12,12 @@ class App extends Component {
           {/* <div className=" flex-row-center max-width">
             <h1 className="title">Red Tetris</h1>
           </div> */}
-          <Chrono />
-          <AddInput />
-        
+          <HomePage />
+
       </div>
     );
   }
- 
+
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import NextPieceComponent from '../components/NextPiece' 
+import NextPieceComponent from '../components/NextPiece'
 import { addPiece, sendPieceToGame, initGrid, updateGrid } from '../actions'
 import currentPiece from '../reducers/currentPiece'
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
       dispatch(updateGrid(x, y, piece_grid))
     }
   })
-  
+
   export const NextPiece = connect(
       state => ({
         waitingPieces: state.waitingPieces,

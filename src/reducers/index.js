@@ -6,15 +6,17 @@ import waitingPieces from "./waitingPieces"
 import currentPiece from "./currentPiece"
 import playedPieces from "./playedPieces"
 import grid from './grid'
+import homePage from './homepage'
 
 const test = combineReducers({
     waitingPieces,
-    inputs, 
+    inputs,
     players,
     time,
-    playedPieces, 
+    playedPieces,
     currentPiece,
-    grid
+    grid,
+    homePage
 })
 
 export default test

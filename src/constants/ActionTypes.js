@@ -4,7 +4,7 @@ export const INPUT_RECEIVED = "INPUT_RECEIVED"
 export const ADD_PLAYER = "ADD_PLAYER"
 export const PLAYERS_LIST = "PLAYERS_LIST"
 
-export const ADD_PIECE = "ADD_PIECE" 
+export const ADD_PIECE = "ADD_PIECE"
 export const PIECE_RECEIVED = "PIECE_RECEIVED"
 
 export const UPDATE_TIME = "UPDATE_TIME"
@@ -24,3 +24,5 @@ export const ARROW_DOWN = "ARROW_DOWN"
 export const SPACE = "SPACE"
 
 export const PIECE_IS_PLAYED = "PIECE_IS_PLAYED"
+
+export const ON_HOME = "ON_HOME"

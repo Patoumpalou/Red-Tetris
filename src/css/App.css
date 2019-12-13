@@ -72,22 +72,27 @@
 
 }
 .piece_shape_1{
-    
+
 }
 .piece_shape_2{
     max-width: calc(var(--square-dim) * 2) !important;
     max-height: calc(var(--square-dim) * 2) !important;
 }
 .piece_shape_3{
-    
+
 }
 .piece_shape_4{
-    
+
 }
 .piece_shape_5{
-    
+
 }
 .piece_shape_6{
     max-width: calc(var(--square-dim) * 4) !important;
     max-height: calc(var(--square-dim) * 4) !important;
+}
+
+/* HOME */
+#home {
+  text-align: center;
 }

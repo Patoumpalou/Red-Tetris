@@ -3,7 +3,7 @@ import { get_piece_grid } from '../function'
 
 let nextInputId = 0
 let nextPlayerId = 0
-let nextPieceId = 1 
+let nextPieceId = 1
 
 //  related to playedpiece reducer and currentPiece reducer
 export const pieceIsPlayed = (piece_grid, y, x, shape) => ({
@@ -46,11 +46,11 @@ export const space = () => ({
 
 // related to inputs reducer DELETE ?
 export const addInput = (input, player) => ({
-    type: types.ADD_INPUT, 
+    type: types.ADD_INPUT,
     id: nextInputId++,
     input,
     player
-}) 
+})
 
 // related to inputs reducer
 export const InputReceived = (input, player) => ({
@@ -76,13 +76,13 @@ export const PieceReceived = (shape, state, piece_grid) => ({
     piece_grid: piece_grid,
     shape,
     state,
-    
+
 })
 
 // related to nextPiece and currentPiece reducer
 export const sendPieceToGame = (id, shape, state, piece_grid ) => ({
     type: types.SEND_PIECE_TO_GAME,
-    id, 
+    id,
     shape,
     state,
     piece_grid
@@ -106,10 +106,13 @@ export const gameStart = () => ({
 })
 
 
+//homepage action
+export const onHome = () => ({
+  type: types.ON_HOME
+})
 
 
-
-// unused yet 
+// unused yet
 export const addPlayer = name => ({
     type: types.ADD_PLAYER,
     id: nextPlayerId++,
@@ -119,4 +122,3 @@ export const populatePlayerList = players => ({
     type: types.PLAYERS_LIST,
     players
 })
-
