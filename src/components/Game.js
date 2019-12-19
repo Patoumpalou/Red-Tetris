@@ -17,17 +17,7 @@ const Game = (props) => {
 			// console.log(checkForContact(props.grid, currentPiece))
 
 		}
-		// if (currentPiece.y == (20 - currentPiece.height)){
-		// 	console.log(currentPiece.y)
-		// 	console.log(20 - currentPiece.height)
-		// 	console.log('piece is played')
-		// 	props.pieceIsPlayed(
-		// 		currentPiece.piece_grid,
-		// 		currentPiece.y,
-		// 		currentPiece.x,
-		// 		currentPiece.shape
-		// 	)
-		// }
+
 
 		let y = 0;
 		let x = 0;

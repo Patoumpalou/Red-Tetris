@@ -4,6 +4,11 @@ import currentPiece from './currentPiece'
 
 const grid = (state = [], action) => {
     switch (action.type) {
+        case types.ADD_LISTENER:
+            return ({
+                ...state,
+                listenerAdded: true,
+            })
         case types.GAME_OVER:
             return ({
                 ...state,
@@ -40,7 +45,8 @@ const grid = (state = [], action) => {
                         [0,0,0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0]
                     ],
-                    gameStatus: "on"
+                    gameStatus: "on",
+                    listenerAdded: state.listenerAdded
                 }
             )
         case types.UPDATE_GRID:
@@ -89,7 +95,9 @@ const grid = (state = [], action) => {
                 piece_y: action.y,
                 piece_x: action.x,
                 old_position,
-                gameStatus: state.gameStatus
+                gameStatus: state.gameStatus,
+                listenerAdded: state.listenerAdded
+
             })
         default:
             return state

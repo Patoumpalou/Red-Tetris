@@ -17,13 +17,14 @@ const addInput = (props) => {
 		
 	
 	// }
-	props.gameStart()
-	document.addEventListener('keydown', (e) => {
-		// console.log(e.code)
+	
+	const test = (e) => {
+		console.log('here '+ props.grid.piece_y)
+
+			// console.log(e.code)
 		// console.log(props.waitingPieces)
 		if(e.code === 'ArrowUp'){
 			// rotation
-			// console.log(' asdasd')
 			props.arrowUp()
 			
 		}
@@ -43,18 +44,22 @@ const addInput = (props) => {
 			props.space()
 			// deplacement vertical 
 		}
-	})
+	}
+	console.log(props.grid.listenerAdded)
+	if (props.grid.listenerAdded === undefined){
+		console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+		document.addEventListener('keydown', test, true)
+		props.addListener()
+	}
+	else{
+		document.removeEventListener('keydown', test, true)
+		console.log('ok')
+
+	}
     return (
-        <section id="cc">
-			<div className="container">
-				<section className="flex-column-center" id="left-container">
-					<UpdateGrid />
-					<NextPiece />
-					<Game />
-				</section>
-				<Sidebar />
-          	</div>
-		</section>
+     <div
+	 
+	 ></div>
     )
 }
 

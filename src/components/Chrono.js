@@ -6,7 +6,7 @@ import  { test }  from "../containers/UpdateGrid";
 
 const Chrono = (props) => {
 	let i = 0;
-
+	props.gameStart()
 	setInterval(() => {
 		// if(props.time.gameStatus === 'on'){
 			if(i >= 4 ){

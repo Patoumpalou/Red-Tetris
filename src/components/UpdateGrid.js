@@ -23,7 +23,7 @@ const UpdateGrid = (props) => {
 			bool2 = 'bottomtouched'
 		}
 		// console.log(bool)
-		if (bool === 'stop'){
+		if (bool === 'stop' && currentPiece.x === grid.piece_x){
 			console.log(grid.gameStatus)
 			// console.log(20 - currentPiece.height)
 			console.log(currentPiece.y )
@@ -60,7 +60,7 @@ const UpdateGrid = (props) => {
 				currentPiece.piece_grid
 			)
 			let tmp = SearchAnddestroyLines(grid.array)
-			console.log(tmp)
+			// console.log(tmp)
 			console.log('piece is played')
 			props.pieceIsPlayed(
 				currentPiece.piece_grid,
@@ -76,7 +76,7 @@ const UpdateGrid = (props) => {
 				currentPiece.piece_grid
 			)
 			let tmp = SearchAnddestroyLines(grid.array)
-			console.log(tmp)
+			// console.log(tmp)
 		}
 	}
 	

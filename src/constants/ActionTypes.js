@@ -26,3 +26,8 @@ export const SPACE = "SPACE"
 export const PIECE_IS_PLAYED = "PIECE_IS_PLAYED"
 
 export const ON_HOME = "ON_HOME"
+
+
+
+
+export const ADD_LISTENER = "ADD_LISTENER" 

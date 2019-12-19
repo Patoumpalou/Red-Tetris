@@ -25,6 +25,9 @@ export const updateGrid = (x, y, piece_grid) => ({
     piece_grid
 
 })
+export const addListener = () => ({
+    type: types.ADD_LISTENER
+})
 
 // related to currentPiece reducer
 export const arrowLeft = () => ({

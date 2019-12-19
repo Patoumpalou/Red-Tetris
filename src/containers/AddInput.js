@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import AddInputComponent from '../components/AddInput'
-import { gameStart, arrowUp, arrowDown, arrowLeft, arrowRight, space} from '../actions'
+import { addListener, arrowUp, arrowDown, arrowLeft, arrowRight, space} from '../actions'
 
 const mapDispatchToProps = dispatch => ({
   arrowLeft: () => {
@@ -18,16 +18,17 @@ const mapDispatchToProps = dispatch => ({
   space: () => {
     dispatch(space())
   },
-  gameStart: () => {
-    dispatch(gameStart())
-  }
+ addListener: () => {
+   dispatch(addListener())
+ }
 })
 
 export const AddInput = connect(
-  () => ({
+  state => ({
     // waitingPieces: state.waitingPieces,
     // time: state.time,
     // currentPiece: state.currentPiece,
+    grid: state.grid
 
 }),
   mapDispatchToProps
